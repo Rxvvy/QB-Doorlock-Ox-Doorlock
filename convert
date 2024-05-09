@@ -1,0 +1,6 @@
+RegisterNetEvent('qb-doorlock:server:updateState', function(doorID, locked, src, usedLockpick, unlockAnyway, enableSounds, enableAnimation, sentSource)
+    local door = exports.ox_doorlock:getDoorFromName(doorID)
+    local state = locked and 1 or 0 
+    local lockpick = usedLockpick or false 
+    TriggerEvent('ox_doorlock:setState', door.id, state, lockpick)
+end)
